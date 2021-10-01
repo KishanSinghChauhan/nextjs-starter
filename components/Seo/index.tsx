@@ -39,7 +39,6 @@ export default function Seo(props: SeoProps) {
       <meta property="og:title" content={meta.title} />
       <meta name="image" property="og:image" content={meta.image} />
       <meta name="twitter:card" content="summary_large_image" />
-      {/* <meta name='twitter:site' content='@th_clarence' /> */}
       <meta name="twitter:title" content={meta.title} />
       <meta name="twitter:description" content={meta.description} />
       <meta name="twitter:image" content={meta.image} />
@@ -51,12 +50,15 @@ export default function Seo(props: SeoProps) {
             property="og:publish_date"
             content={meta.date}
           />
-          <meta name="author" property="article:author" content="zopper" />
+          <meta
+            name="author"
+            property="article:author"
+            content="nextjs-starter"
+          />
         </>
       )}
       <link rel="shortcut icon" href="/favicon.ico" />
       <meta name="msapplication-TileColor" content="#ffffff" />
-      <meta name="msapplication-TileImage" content="/favicon/favicon.svg" />
       <meta name="theme-color" content="#ffffff" />
     </Head>
   );
