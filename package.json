@@ -6,14 +6,19 @@
     "dev": "next dev -p 5000",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "prepare": "husky install",
+    "lint": "next lint",
+    "lint:fix": "eslint src --fix && yarn format",
+    "format": "prettier --write src",
+    "release": "standard-version",
+    "push-release": "git push --follow-tags origin main",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "next": "11.1.2",
     "next-compose-plugins": "^2.2.1",
-    "next-optimized-images": "^2.6.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "sass": "^1.42.1",
@@ -25,6 +30,26 @@
     "eslint-config-next": "11.1.2",
     "typescript": "4.4.3",
     "file-loader": "^6.2.0",
-    "sass-loader": "^10.2.0"
+    "sass-loader": "^10.2.0",
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "next-sitemap": "^1.6.164",
+    "prettier": "^2.3.0",
+    "standard-version": "^9.3.1"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,}": [
+      "eslint --max-warnings=0",
+      "prettier -w"
+    ],
+    "src/**/*.{json,css,scss,md}": [
+      "prettier -w"
+    ]
   }
 }

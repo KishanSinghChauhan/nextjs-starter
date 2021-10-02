@@ -1,3 +1,9 @@
+# *
 User-agent: *
-Disallow: /downloads/
-Sitemap: 'your website url'
+Allow: /
+
+# Host
+Host: your site url
+
+# Sitemaps
+Sitemap: your site url/sitemap.xml
